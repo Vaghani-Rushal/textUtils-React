@@ -3,37 +3,30 @@ import PropTypes from "prop-types";
 
 export default function TextForm(props) {
   const convertToUpperCaseBtn = () => {
-    console.log("Button Clicked - To Convert UpperText");
-    // console.log(text.toUpperCase());
     document.getElementById("formTextArea").value = text.toUpperCase();
     setText(text.toUpperCase());
     props.showAlert("Text is converted into Upper-Text.", "success");
   };
 
   const convertToLowerCaseBtn = () => {
-    console.log("Button Clicked - To Convert LowerText");
-    // console.log(text.toLowerCase());
     document.getElementById("formTextArea").value = text.toLowerCase();
     setText(text.toLowerCase());
     props.showAlert("Text is converted into Lower-Text.", "success");
   };
 
   const clearTextBtn = () => {
-    console.log("Button Clicked - To Clear Text");
     document.getElementById("formTextArea").value = "";
     setText("");
     props.showAlert("Text has been Cleared.", "success");
   };
 
   const copyTextBtn = (event) => {
-    console.log("Button Clicked - To Copy Text");
     document.getElementById("formTextArea").select();
     navigator.clipboard.writeText(text);
     props.showAlert("Text has copied. ", "success");
   };
 
   const handleOnChangeText = (event) => {
-    console.log("On ChangeText");
     setText(event.target.value);
   };
 
